@@ -9,6 +9,7 @@ type User = {};
 
 export default function Header() {
   const [user, setUser] = useState<User | null>(null);
+  const [email, setEmail] = useState<any | null>(null);
   const [admin, setAdmin] = useState<User | null>(null);
 
   useEffect(() => {
@@ -21,6 +22,12 @@ export default function Header() {
         console.log("No User");
       } else {
         setUser(data.user);
+      }
+
+      console.log(data.user?.email);
+
+      if (data?.user) {
+        setEmail(data.user?.email);
       }
 
       const userEmail = "avantsystem@gmail.com";
@@ -59,6 +66,11 @@ export default function Header() {
                 >
                   Create Post
                 </Link>
+              ) : (
+                <div></div>
+              )}
+              {user ? (
+                <p className="text-white">Welcome {email}</p>
               ) : (
                 <div></div>
               )}

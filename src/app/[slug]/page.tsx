@@ -38,7 +38,7 @@ export default async function Post({ params }: { params: any }) {
           className="p-3 max-w-2xl text-white mx-auto w-full post-content border-b border-slate-500 mb-2"
           dangerouslySetInnerHTML={{ __html: post && post.content }}
         ></div>
-        <Comment postId={post.id} />
+        <Comment postid={post.id} />
       </main>
     </>
   );

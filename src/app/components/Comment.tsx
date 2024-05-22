@@ -10,7 +10,7 @@ import {
 import { addComment } from "@/utils/supabase/AddComment";
 import { createClient } from "@/utils/supabase/client";
 
-export default function Comment({ postId }: { postId: any }) {
+export default function Comment({ postid }: { postid: any }) {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState<any[]>([]);
   const [articleContent, setArticleContent] = useState("");
@@ -33,17 +33,17 @@ export default function Comment({ postId }: { postId: any }) {
       const { data, error } = await supabase
         .from("articles")
         .select("*")
-        .eq("id", postId)
+        .eq("id", postid)
         .single();
 
-      if (data?.id == postId) {
+      if (data?.id == postid) {
         setArticleContent(data.content);
       }
     };
 
     fetchArticleContent();
     fetchComments();
-  }, [postId]);
+  }, [postid]);
 
   console.log(comments);
 
@@ -90,7 +90,7 @@ export default function Comment({ postId }: { postId: any }) {
             type="text"
             id="postId"
             name="postId"
-            value={postId}
+            value={postid}
             className="hidden"
           />
           <div className="flex justify-between items-center mt-5">
@@ -105,7 +105,7 @@ export default function Comment({ postId }: { postId: any }) {
         <p className="text-white mb-2">Comments:</p>
         {comments?.map(
           (postComment) =>
-            postComment.postId == postId && (
+            postComment.postId == postid && (
               <div
                 key={postComment.id}
                 className="flex p-4 border-b dark:border-gray-600 text-sm"

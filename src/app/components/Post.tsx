@@ -75,7 +75,7 @@ export default function CreatePost() {
               id="title"
               name="title"
               placeholder="Title"
-              value={articleTitle}
+              defaultValue={articleTitle}
               onChange={(event) => setArticleTitle(event.target.value)}
               className="p-4 w-full rounded-lg border text-sm border-gray-600 bg-gray-700 text-white placeholder-gray-400"
             />
@@ -132,7 +132,8 @@ export default function CreatePost() {
               } finally {
                 setPublishTaskRunning(false);
               }
-            }}>
+            }}
+          >
             {publishTaskRunning ? "Publishing..." : "Publish"}
           </button>
         </form>

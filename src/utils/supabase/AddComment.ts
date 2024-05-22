@@ -7,7 +7,7 @@ import { redirect } from "next/navigation";
 // Define an asynchronous function named 'addArticle' that takes form data as input
 export async function addComment(formData: any) {
   // Extract title and content from the provided form data
-  const postId = formData.get("postId");
+  const postid = formData.get("postId");
   const content = formData.get("content");
 
   // Retrieve cookies from the HTTP headers
@@ -19,7 +19,7 @@ export async function addComment(formData: any) {
   // Insert the article data into the 'articles' table on Supabase
   const { data, error } = await supabase.from("comments").insert([
     {
-      postId,
+      postid,
       content,
     },
   ]);
