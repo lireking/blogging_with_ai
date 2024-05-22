@@ -54,14 +54,15 @@ export default function Comment({ postId }: { postId: any }) {
       <div className="max-w-2xl mx-auto w-full p-3">
         <form
           action={addComment}
-          className="border border-teal-500 rounded-md p-3 mb-4">
+          className="border border-teal-500 rounded-md p-3 mb-4"
+        >
           <textarea
             id="content"
             name="content"
             placeholder="Add a comment..."
             rows={3}
             onChange={(e) => setComment(e.target.value)}
-            value={comment}
+            defaultValue={comment}
             className="hidden"
           />
 
@@ -95,7 +96,8 @@ export default function Comment({ postId }: { postId: any }) {
           <div className="flex justify-between items-center mt-5">
             <button
               type="submit"
-              className="bg-blue-500 text-white font-bold py-2 px-4 rounded">
+              className="bg-blue-500 text-white font-bold py-2 px-4 rounded"
+            >
               Submit
             </button>
           </div>
@@ -106,7 +108,8 @@ export default function Comment({ postId }: { postId: any }) {
             postComment.postId == postId && (
               <div
                 key={postComment.id}
-                className="flex p-4 border-b dark:border-gray-600 text-sm">
+                className="flex p-4 border-b dark:border-gray-600 text-sm"
+              >
                 <div className="flex-shrink-0 mr-3">
                   <Image
                     className="w-10 h-10 rounded-full bg-gray-200"

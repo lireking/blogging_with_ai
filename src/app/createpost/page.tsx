@@ -8,7 +8,7 @@ import "@copilotkit/react-textarea/styles.css";
 import { createClient } from "@/utils/supabase/server";
 
 export default async function WriteArticle() {
-  const userEmail = "thegreatechwriters@gmail.com";
+  const userEmail = "avantsystem@gmail.com";
   const supabase = createClient();
 
   const { data, error } = await supabase.auth.getUser();

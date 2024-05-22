@@ -23,7 +23,7 @@ export default function Header() {
         setUser(data.user);
       }
 
-      const userEmail = "thegreatechwriters@gmail.com";
+      const userEmail = "avantsystem@gmail.com";
 
       if (!data?.user || data.user?.email !== userEmail) {
         console.log("No Admin");
@@ -39,12 +39,14 @@ export default function Header() {
       <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-gray-800 border-b border-gray-200 text-sm py-3 sm:py-0 ">
         <nav
           className="relative max-w-7xl w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8"
-          aria-label="Global">
+          aria-label="Global"
+        >
           <div className="flex items-center justify-between">
             <Link
               className="flex-none text-xl text-white font-semibold "
               href="/"
-              aria-label="Brand">
+              aria-label="Brand"
+            >
               AIBlog
             </Link>
           </div>
@@ -53,7 +55,8 @@ export default function Header() {
               {admin ? (
                 <Link
                   className="flex items-center font-medium text-gray-500 border-2 border-indigo-600 text-center p-2 rounded-md hover:text-blue-600 sm:border-s sm:my-6 "
-                  href="/createpost">
+                  href="/createpost"
+                >
                   Create Post
                 </Link>
               ) : (
@@ -64,14 +67,16 @@ export default function Header() {
                 <form action={logout}>
                   <button
                     className="flex items-center font-medium text-gray-500 border-2 border-indigo-600 text-center p-2 rounded-md hover:text-blue-600 sm:border-s sm:my-6 "
-                    type="submit">
+                    type="submit"
+                  >
                     Logout
                   </button>
                 </form>
               ) : (
                 <Link
                   className="flex items-center font-medium text-gray-500 border-2 border-indigo-600 text-center p-2 rounded-md hover:text-blue-600 sm:border-s sm:my-6 "
-                  href="/login">
+                  href="/login"
+                >
                   Login
                 </Link>
               )}
